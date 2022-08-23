@@ -24,6 +24,6 @@ pkgs.dockerTools.buildImage {
     ExposedPorts = {
       "8888" = { };
     };
-    Entrypoint = [ "/entrypoint.sh" ];
+    Entrypoint = [ "/entrpont.shit" ];
   };
 }
