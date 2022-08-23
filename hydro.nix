@@ -1,8 +1,8 @@
 { pkgs ? import <nixpkgs> { system = "x86_64-linux"; } }:
 
 pkgs.dockerTools.buildImage {
-  name = "hydrooj/web";
-  tag = "latest";
+  name = "hydrooj/ac";
+  tag = "fuckest";
 
   contents = [
     pkgs.mongodb-4_2
@@ -11,8 +11,8 @@ pkgs.dockerTools.buildImage {
     pkgs.yarn
   ];
   runAsRoot = ''
-    #!${pkgs.runtimeShell}
-    mkdir -p /data/db
+    {pkgs.runtimeShell}
+    system("mkdir -p /data/db")
     yarn global add pm2 hydrooj @hydrooj/ui-default @hydrooj/hydrojudge
     hydrooj addon add @hydrooj/hydrojudge
     hydrooj addon add @hydrooj/ui-default
